@@ -11,12 +11,17 @@
 
 
     <style>
+        body{background-image: url("assets/images/patternCircles.jpg");}
         #image40{height: 60px;}
         .logo-Header {color:#FECECA; font-size:80px;}
         .cat-Header {color:black; font-size:60px;}
         .indieFlower {font-family: 'Indie Flower', cursive;}
         .wide-button{width: 100%};
         .myBottom {border-bottom: 2px solid #FECECA;}
+        .pinkFlowers{color:#FECECA;}
+        .jumbotron {border-radius: 0px;}
+        .border{border-radius:0px;}
+        
     </style>
 
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
@@ -31,14 +36,26 @@
 
 
 <div class="container">
-    <nav class="nav bg-dark p-3 mt-5">
-        <h5 class="text-white nav-item  mb-0" id="userCharNavName">Choose a Bunny </h5> &nbsp &nbsp
-        <h5 class="text-white nav-item health mb-0"></h5> &nbsp &nbsp
-        <h5 class="text-white nav-item attack mb-0"></h5> &nbsp &nbsp
-        <h5 class="text-white nav-item mb-0 wins justify-content-end" >Wins: 0</h5> &nbsp &nbsp
-        <h5 class="text-white nav-item mb-0 losses justify-content-end" >Losses: 0</h5>
+    <nav class="nav bg-dark p-3 mt-5" id="userStatsBar">
+        <h5 class="pinkFlowers nav-item  mb-0" id="userCharNavName">Choose a Bunny </h5> &nbsp &nbsp
+        <h5 class="pinkFlowers nav-item health mb-0"></h5> &nbsp &nbsp
+        <h5 class="pinkFlowers nav-item attack mb-0"></h5> &nbsp &nbsp
+        <h5 class="pinkFlowers nav-item mb-0 wins justify-content-end" >Wins: 0</h5> &nbsp &nbsp
+        <h5 class="pinkFlowers nav-item mb-0 losses justify-content-end" >Losses: 0</h5>
     </nav>
-    <div class="jumbotron text-center" id="charSelectWindow">
+    <div class="jumbotron text-center border border-dark" id="startGameWindow">
+        <h2 class="cat-Header indieFlower">HOW TO PLAY</h2>
+        <p class="font-italic">Select one of the four bunnies to play as. Then, choose one of the remaining bunnies to battle against.</p>
+        <p class="font-italic">Press the "attack" button to attack the current enemy.  Your attack power will increase after each successful attack. If the enemy survives the attack, it will counter attack, causing you damage.</p>    
+        <p class="font-italic">If you succesfully kill the current enemy, you must then fight the remaining enemies.  Your health does not regenerate.</p>
+        <p class="font-italic">If at any point, the enemies counter attack causes you to lose all your health, you lose the game.  The game will then restart.</p>
+        <p class="font-italic">To win, you must successfully defeat all the enemies without losing all of your health.</p>
+        <br>
+        <button class="btn btn-success p-3 wide-button" id="startGame"><h1>Start The Game</h1></button>
+        
+
+    </div>
+    <div class="jumbotron text-center border border-dark" id="charSelectWindow">
         <h2 class="cat-Header indieFlower">SELECT YOUR BUNNY</h2>
             <span class="btn border border-primary p-0" id="userBunny"></span> &nbsp &nbsp
             <span class="btn border border-primary p-0" id="userBigBunny"></span> &nbsp &nbsp  
@@ -46,14 +63,14 @@
             <span class="btn border border-primary p-0" id="userDeathBunny"></span>
     </div>
 
-    <div class="jumbotron text-center" id="enemySelectWindow">
+    <div class="jumbotron text-center border border-dark" id="enemySelectWindow">
         <h2 class="cat-Header indieFlower">SELECT AN ENEMY</h2>
         <span id="enemy1"></span> &nbsp &nbsp
         <span id="enemy2"></span> &nbsp &nbsp
         <span id="enemy3"></span>
     </div>
 
-    <div class="jumbotron text-center" id="battleWindow">
+    <div class="jumbotron text-center border border-dark" id="battleWindow">
         <h2 class="cat-Header indieFlower">BUNNY BATTLE!</h2>
         <button class="btn p-3" id="userFightIcon"></button> <span class="cat-Header indieFlower">&nbsp VS. &nbsp</span>
         <button class="btn p-3" id="enemyFightIcon"></button>
@@ -65,12 +82,12 @@
         <button class="btn btn-danger p-3 wide-button" id="attack"><h1>ATTACK</h1></button>
     </div>
     
-    <div class="jumbotron text-center" id="winWindow">
+    <div class="jumbotron text-center border border-dark" id="winWindow">
         <h1 class="cat-Header indieFlower text-success">CONGRATULATIONS</h1>
         <h1 class="cat-Header indieFlower text-success">YOU WON!</h1>
         <button class="btn btn-success p-3 wide-button reset"><h1>Play Again</h1></button>
     </div>
-    <div class="jumbotron text-center" id="lossWindow">
+    <div class="jumbotron text-center border border-dark" id="lossWindow">
         <h1 class="cat-Header indieFlower text-danger">SORRY</h1>
         <h1 class="cat-Header indieFlower text-danger">YOU LOST!</h1>
         <button class="btn btn-danger p-3 wide-button reset"><h1>Play Again</h1></button>
