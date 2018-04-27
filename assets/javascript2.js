@@ -205,6 +205,7 @@ if (currEnemy.hp > 0){                                              //if enemy's
         if (killCount == 3){                        
             wins++;                                                 //increase wins +1
             $("#enemySelectWindow").hide();                         //hide enemy select window
+            $("#userStatsBar").hide();                              //hide stats bar
             $("#winWindow").show();                                 //show Congratulations window
             $(".reset").click (function(){                          //click reset button to go play again
                 reset();
@@ -222,6 +223,7 @@ if (currEnemy.hp > 0){                                              //if enemy's
             losses++;                                               //increase losses by 1
             console.log("The " + currEnemy.name +" killed you ");   
             $("#battleWindow").hide();                              //hide battle window
+            $("#userStatsBar").hide();                              //hide stats bar
             $("#lossWindow").show();                                //show the You Lost window
             $(".reset").click (function(){                          //click reset button to play again
                 reset();
