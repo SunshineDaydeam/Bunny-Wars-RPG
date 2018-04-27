@@ -15,6 +15,8 @@
         .logo-Header {color:#FECECA; font-size:80px;}
         .cat-Header {color:black; font-size:60px;}
         .indieFlower {font-family: 'Indie Flower', cursive;}
+        .wide-button{width: 100%};
+        .myBottom {border-bottom: 2px solid #FECECA;}
     </style>
 
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
@@ -22,27 +24,26 @@
 </head>
 <body>
 
-<nav class="nav navbar justify-content-center bg-dark mb-3"> 
+<nav class="nav navbar justify-content-center bg-dark mb-3 myBottom"> 
     <h1 class="text-center display-4 logo-Header indieFlower pt-3"> BUNN<span><img id ="image40" src="assets/images/bunnyWars.png"></span> WARS</h1>
 </nav>
 
 
 
 <div class="container">
-
-    <nav class="nav bg-dark p-3">
-        <h5 class="text-white nav-item bg-secondary mb-0" id="userCharNavName">Choose a Bunny </h5> &nbsp &nbsp
-        <h5 class="text-white nav-item bg-secondary health mb-0" id-"userCharNavHp">Health: </h5> &nbsp &nbsp
-        <h5 class="text-white nav-item bg-secondary attack mb-0" id-"userCharNavAttack">Attack: </h5> &nbsp &nbsp
-        <h5 class="text-white nav-item bg-secondary mb-0 wins justify-content-end" >Wins: 0</h5> &nbsp &nbsp
-        <h5 class="text-white nav-item bg-secondary mb-0 losses justify-content-end" >Losses: 0</h5>
+    <nav class="nav bg-dark p-3 mt-5">
+        <h5 class="text-white nav-item  mb-0" id="userCharNavName">Choose a Bunny </h5> &nbsp &nbsp
+        <h5 class="text-white nav-item health mb-0"></h5> &nbsp &nbsp
+        <h5 class="text-white nav-item attack mb-0"></h5> &nbsp &nbsp
+        <h5 class="text-white nav-item mb-0 wins justify-content-end" >Wins: 0</h5> &nbsp &nbsp
+        <h5 class="text-white nav-item mb-0 losses justify-content-end" >Losses: 0</h5>
     </nav>
     <div class="jumbotron text-center" id="charSelectWindow">
         <h2 class="cat-Header indieFlower">SELECT YOUR BUNNY</h2>
-            <span class="btn border border-primary" id="userBunny"></span> &nbsp &nbsp
-            <span class="btn border border-primary" id="userBigBunny"></span> &nbsp &nbsp  
-            <span class="btn border border-primary" id="userEasterBunny"></span> &nbsp &nbsp
-            <span class="btn border border-primary" id="userDeathBunny"></span>
+            <span class="btn border border-primary p-0" id="userBunny"></span> &nbsp &nbsp
+            <span class="btn border border-primary p-0" id="userBigBunny"></span> &nbsp &nbsp  
+            <span class="btn border border-primary p-0" id="userEasterBunny"></span> &nbsp &nbsp
+            <span class="btn border border-primary p-0" id="userDeathBunny"></span>
     </div>
 
     <div class="jumbotron text-center" id="enemySelectWindow">
@@ -57,14 +58,25 @@
         <button class="btn p-3" id="userFightIcon"></button> <span class="cat-Header indieFlower">&nbsp VS. &nbsp</span>
         <button class="btn p-3" id="enemyFightIcon"></button>
 
-
         <br>
         <br>
         <p id="attackText"></p>
         <p id="counterAttackText"></p>
-        
-        <button class="btn btn-danger p-3" id="attack">Attack</button>
+        <button class="btn btn-danger p-3 wide-button" id="attack"><h1>ATTACK</h1></button>
     </div>
+    
+    <div class="jumbotron text-center" id="winWindow">
+        <h1 class="cat-Header indieFlower text-success">CONGRATULATIONS</h1>
+        <h1 class="cat-Header indieFlower text-success">YOU WON!</h1>
+        <button class="btn btn-success p-3 wide-button reset"><h1>Play Again</h1></button>
+    </div>
+    <div class="jumbotron text-center" id="lossWindow">
+        <h1 class="cat-Header indieFlower text-danger">SORRY</h1>
+        <h1 class="cat-Header indieFlower text-danger">YOU LOST!</h1>
+        <button class="btn btn-danger p-3 wide-button reset"><h1>Play Again</h1></button>
+    </div>
+    
+
 </div>
     
 
