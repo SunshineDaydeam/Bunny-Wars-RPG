@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bunny Wars</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--link rel="stylesheet" type="text/css" media="screen" href="main.css" /-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+
+    <style>
+        #image40{height: 60px;}
+        .logo-Header {color:#FECECA; font-size:80px;}
+        .cat-Header {color:black; font-size:60px;}
+        .indieFlower {font-family: 'Indie Flower', cursive;}
+    </style>
+
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+</head>
+<body>
+
+<nav class="nav navbar justify-content-center bg-dark mb-3"> 
+    <h1 class="text-center display-4 logo-Header indieFlower pt-3"> BUNN<span><img id ="image40" src="assets/images/bunnyWars.png"></span> WARS</h1>
+</nav>
+
+
+
+<div class="container">
+
+    <nav class="nav bg-dark p-3">
+        <h5 class="text-white nav-item bg-secondary mb-0" id="userCharNavName">Choose a Bunny </h5> &nbsp &nbsp
+        <h5 class="text-white nav-item bg-secondary health mb-0" id-"userCharNavHp">Health: </h5> &nbsp &nbsp
+        <h5 class="text-white nav-item bg-secondary attack mb-0" id-"userCharNavAttack">Attack: </h5> &nbsp &nbsp
+        <h5 class="text-white nav-item bg-secondary mb-0 wins justify-content-end" >Wins: 0</h5> &nbsp &nbsp
+        <h5 class="text-white nav-item bg-secondary mb-0 losses justify-content-end" >Losses: 0</h5>
+    </nav>
+    <div class="jumbotron text-center" id="charSelectWindow">
+        <h2 class="cat-Header indieFlower">SELECT YOUR BUNNY</h2>
+            <span class="btn border border-primary" id="userBunny"></span> &nbsp &nbsp
+            <span class="btn border border-primary" id="userBigBunny"></span> &nbsp &nbsp  
+            <span class="btn border border-primary" id="userEasterBunny"></span> &nbsp &nbsp
+            <span class="btn border border-primary" id="userDeathBunny"></span>
+    </div>
+
+    <div class="jumbotron text-center" id="enemySelectWindow">
+        <h2 class="cat-Header indieFlower">SELECT AN ENEMY</h2>
+        <span id="enemy1"></span> &nbsp &nbsp
+        <span id="enemy2"></span> &nbsp &nbsp
+        <span id="enemy3"></span>
+    </div>
+
+    <div class="jumbotron text-center" id="battleWindow">
+        <h2 class="cat-Header indieFlower">BUNNY BATTLE!</h2>
+        <button class="btn p-3" id="userFightIcon"></button> <span class="cat-Header indieFlower">&nbsp VS. &nbsp</span>
+        <button class="btn p-3" id="enemyFightIcon"></button>
+
+
+        <br>
+        <br>
+        <p id="attackText"></p>
+        <p id="counterAttackText"></p>
+        
+        <button class="btn btn-danger p-3" id="attack">Attack</button>
+    </div>
+</div>
+    
+
+
+    <script src="assets/javascript2.js"></script>
+</body>
+</html>
