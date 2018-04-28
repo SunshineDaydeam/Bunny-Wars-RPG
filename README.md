@@ -2,10 +2,6 @@
 RPG Homework assignment
 
 CHARACTERS:
-        Regular Size Bunny:
-        Health: 160HP, 
-        Attack Power 6, 
-        CounterAttack 12
         
         Big Bad Bunny:
         Health 140HP, 
@@ -21,6 +17,11 @@ CHARACTERS:
         Health 200HP, 
         Attack Power 20, 
         CounterAttack 20
+        
+        Regular Size Bunny:
+        Health: 160HP, 
+        Attack Power 6, 
+        CounterAttack 12
 
 GAMEPLAY:
 Select one of the four bunnies to play as. Then, choose one of the remaining bunnies to battle against.
