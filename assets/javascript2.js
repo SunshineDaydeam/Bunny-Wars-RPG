@@ -1,8 +1,8 @@
 //define characters
 let chars = {
-    'bunny' : {name: 'Regular Sized Bunny',hp: 250,attack: 8,counterAttack: 12, image: "<img src='assets/images/bunnySmall.jpg'>"},
-    'bigBunny' : {name: 'Big Bad Bunny',hp: 140,attack: 12,counterAttack: 25, image: "<img src='assets/images/bunnyBig.jpeg'>"},
-    'easterBunny' : {name: 'The Easter Bunny',hp: 160,attack: 15,counterAttack: 15, image: "<img src='assets/images/bunnyEaster.jpg'>"},
+    'bunny' : {name: 'Regular Sized Bunny',hp: 160,attack: 6,counterAttack: 12, image: "<img src='assets/images/bunnySmall.jpg'>"},
+    'bigBunny' : {name: 'Big Bad Bunny',hp: 140,attack: 11,counterAttack: 25, image: "<img src='assets/images/bunnyBig.jpeg'>"},
+    'easterBunny' : {name: 'The Easter Bunny',hp: 160,attack: 13,counterAttack: 15, image: "<img src='assets/images/bunnyEaster.jpg'>"},
     'deathBunny' : {name: 'The Death Bunny',hp: 200,attack: 20,counterAttack: 20, image: "<img src='assets/images/bunnyEvil.jpg'>"}
 };
 
@@ -25,10 +25,14 @@ function reset(){
     currEnemy=[];                               //reset current enemies
     killCount=0;                                //reset kill counter
     turnCounter=1;                              //reset turn counter
-    chars.bunny.hp=250;                         //reset bunny health
+    chars.bunny.hp=160;                         //reset bunny health
     chars.bigBunny.hp = 140;                    //reset big bunny health
     chars.easterBunny.hp = 160;                 //reset easter bunny health
     chars.deathBunny.hp = 200;                  //reset death bunny health
+
+    $("#enemy1").on();
+    $("#enemy2").on();
+    $("#enemy3").on();
 
     $("#userStatsBar").show();                  //show user stats bar
     $("#charSelectWindow").show();              //show character selection screen
@@ -105,13 +109,44 @@ $('#userDeathBunny').click (function(){     //when deathBunny is selected
 
 //character select function
 //runs when your user character is selected
-function charSelect(){              
-    $("#enemy1").html(enemies[0].image);            //display character images to enemies Select Window
-    $("#enemy2").html(enemies[1].image);            //
-    $("#enemy3").html(enemies[2].image);            //
-    $("#userCharNavName").html(userChar.image)      //display user character image on navbar
+
+    //display character images to enemies Select Window
+function enemySelect1(){
+    $("#enemy1").html(
+        '<div class="card border border-secondary">' +
+            '<p class="indieFlower mb-0">' + enemies[0].name +'</p>' +
+            '<span class="btn p-0">' + enemies[0].image+'</span>' +
+            '<p class="indieFlower mb-0">Attack: ' + enemies[0].attack +'</p>' +
+            '<p class="indieFlower mb-0">Counter: ' + enemies[0].counterAttack +'</p>' +
+            '<p class="indieFlower">Health: ' + enemies[0].hp +'</p>' +
+        '</div>');}
+
+function enemySelect2(){
+        $("#enemy2").html(
+        '<div class="card border border-secondary">' +
+            '<p class="indieFlower mb-0">' + enemies[1].name +'</p>' +
+            '<span class="btn p-0">' + enemies[1].image+'</span>' +
+            '<p class="indieFlower mb-0">Attack: ' + enemies[1].attack +'</p>' +
+            '<p class="indieFlower mb-0">Counter: ' + enemies[1].counterAttack +'</p>' +
+            '<p class="indieFlower">Health: ' + enemies[1].hp +'</p>' +
+        '</div>');}
+function enemySelect3(){
+        $("#enemy3").html(
+        '<div class="card border border-secondary">' +
+            '<p class="indieFlower mb-0">' + enemies[2].name +'</p>' +
+            '<span class="btn p-0">' + enemies[2].image+'</span>' +
+            '<p class="indieFlower mb-0">Attack: ' + enemies[2].attack +'</p>' +
+            '<p class="indieFlower mb-0">Counter: ' + enemies[2].counterAttack +'</p>' +
+            '<p class="indieFlower">Health: ' + enemies[2].hp +'</p>' +
+        '</div>');}
+
+function charSelect(){           
+    $(".userCharNavName").text(userChar.name)      //display user character image on navbar
     $(".health").text("HP: " + userChar.hp);
     $(".attack").text("Attack Power: " + userChar.attack);
+    enemySelect1();
+    enemySelect2();
+    enemySelect3();
     
     $("#charSelectWindow").hide();
     $("#enemySelectWindow").show();
@@ -129,44 +164,61 @@ function charSelect(){
 function updateEnemyList(){                         
     $("#enemySelectWindow").hide();                 //hide enemy selection window
     $("#battleWindow").show();                      //show battle window
-    $("#userFightIcon").html (userChar.image + userChar.hp);      //display user bunny image on battlescreen
-    $("#enemyFightIcon").html(currEnemy.image + currEnemy.hp);     //display enemy bunny image on battlescreen
+    $("#userFightIcon").html (userChar.image);      //display user bunny image on battlescreen
+    $(".health").text("HP: " + userChar.hp);        //Display user bunny HP on battlescreen
+    $(".enemyHealth").text("HP: " + currEnemy.hp);  //display enemy bunny hp on battlescreen
+    $("#enemyFightIcon").html(currEnemy.image);     //display enemy bunny image on battlescreen
     $("#counterAttackText").text("");               //Delete the CounterAttack Text from BattleScreen
     $("#attackText").text("");                      //Delete the Attack Text from BattleScreen
     
         if (enemies[0] != undefined){               //if 1 enemy exists
-            $("#enemy1").html(enemies[0].image);}       //display its image 
+            enemySelect1();}                            //display its image 
         if (enemies[0] == undefined){               //if not
-            $("#enemy1").html("");}                     //display nothing in its spot
+            $("#enemy1").html("");
+            }                     //display nothing in its spot
         if (enemies[1] != undefined){               //if 2nd enemy exists
-            $("#enemy2").html(enemies[1].image);}       //display it's image
+            enemySelect2();}                             //display it's image
         if (enemies[1] == undefined){               //if not
-            $("#enemy2").html("");}                     //display nothing in its spot
+            $("#enemy2").html("");
+            }                     //display nothing in its spot
         if (enemies[2] != undefined){               //if 3rd enemy exists
-            $("#enemy3").html(enemies[2].image);}       //display it's image
+            enemySelect3();}                             //display it's image
         if (enemies[2] == undefined){               //if not
-            $("#enemy3").html("");}                     //display nothing in its spot
+            $("#enemy3").html("");
+            }                     //display nothing in its spot
 }
 
 //Enemy1 Click
-$("#enemy1").click (function(){             //if enemy 1 is selected
-    currEnemy = (enemies[0]);               //define selected enemy ast currEnemy
-    enemies.splice (0,1);                   //remove selected enemy from enemies array                     
-    updateEnemyList();                      //run update enemies function
-    console.log(currEnemy);
-});
-$("#enemy2").click (function(){             //if enemy 1 is selected
-    currEnemy = enemies[1];                 //define selected enemy ast currEnemy
-    enemies.splice (1,1);                   //remove selected enemy from enemies array
-    updateEnemyList();                      //run update enemies function
-    console.log(currEnemy);                 
-});
-$("#enemy3").click (function(){             //if enemy 1 is selected
-    currEnemy = enemies[2];                 //define selected enemy ast currEnemy
-    enemies.splice (2,1);                   //remove selected enemy from enemies array
-    updateEnemyList();                      //run update enemies function
-    console.log(currEnemy);                 
-});
+
+    $("#enemy1").click (function(){
+        if (enemies[0] != undefined){             //if enemy 1 is selected
+            currEnemy = (enemies[0]);               //define selected enemy ast currEnemy
+            enemies.splice (0,1);                   //remove selected enemy from enemies array                     
+            updateEnemyList();                      //run update enemies function
+            console.log(currEnemy);
+        }
+    });
+
+
+    $("#enemy2").click (function(){
+        if (enemies[1] != undefined){             //if enemy 1 is selected
+            currEnemy = enemies[1];                 //define selected enemy ast currEnemy
+            enemies.splice (1,1);                   //remove selected enemy from enemies array
+            updateEnemyList();                      //run update enemies function
+            console.log(currEnemy);
+        }                 
+    });
+
+
+    $("#enemy3").click (function(){
+        if (enemies[2] != undefined){             //if enemy 1 is selected
+            currEnemy = enemies[2];                 //define selected enemy ast currEnemy
+            enemies.splice (2,1);                   //remove selected enemy from enemies array
+            updateEnemyList();                      //run update enemies function
+            console.log(currEnemy);
+        }                 
+    });
+
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -179,11 +231,12 @@ $("#enemy3").click (function(){             //if enemy 1 is selected
 //update battleDisplay Function
 function updateBattleStats(){
     //battle window
-    $("#userFightIcon").html (userChar.image + " " + userChar.hp);      
-    $("#enemyFightIcon").html(currEnemy.image + " " + currEnemy.hp);
+    $("#userFightIcon").html (userChar.image);      
+    $("#enemyFightIcon").html(currEnemy.image);
     //navbar stats
     $("#userCharNavName").html(userChar.image)  
     $(".health").text("HP: " + userChar.hp);
+    $(".enemyHealth").text("HP: " + currEnemy.hp);
     $(".attack").text("Attack Power: " + userChar.attack * turnCounter);
 }
 
@@ -216,7 +269,7 @@ if (currEnemy.hp > 0){                                              //if enemy's
     else {
         userChar.hp -= currEnemy.counterAttack;                     //user hp is reduced by current enemies counter-attack
         $("#counterAttackText").text(currEnemy.name + " countered for " + currEnemy.counterAttack + " Damage!");
-        updateBattleStats()
+        updateBattleStats();
 
         //If user's bunny dies :(
         if (userChar.hp <= 0){                                      

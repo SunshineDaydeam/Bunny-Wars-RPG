@@ -36,44 +36,119 @@
 
 
 <div class="container">
-    <nav class="nav bg-dark p-3 mt-5" id="userStatsBar">
-        <h5 class="pinkFlowers nav-item  mb-0" id="userCharNavName">Choose a Bunny </h5> &nbsp &nbsp
-        <h5 class="pinkFlowers nav-item health mb-0"></h5> &nbsp &nbsp
-        <h5 class="pinkFlowers nav-item attack mb-0"></h5> &nbsp &nbsp
-        <h5 class="pinkFlowers nav-item mb-0 wins justify-content-end" >Wins: 0</h5> &nbsp &nbsp
-        <h5 class="pinkFlowers nav-item mb-0 losses justify-content-end" >Losses: 0</h5>
+
+    <!--Stats Bar-->
+    <nav class="nav bg-dark p-3 mt-5 indieFlower" id="userStatsBar">
+        <h3 class="pinkFlowers nav-item  mb-0 userCharNavName"> </h3> &nbsp &nbsp
+        <h5 class="text-light nav-item health pt-2 mb-0"></h5> &nbsp &nbsp
+        <h5 class="text-light nav-item attack pt-2 mb-0"></h5> &nbsp &nbsp
+        <h5 class="text-light nav-item mb-0 pt-2 wins " >Wins: 0</h5> &nbsp &nbsp
+        <h5 class="text-light nav-item mb-0 pt-2 losses" >Losses: 0</h5>
     </nav>
+
+    <!--Start Game Window-->
     <div class="jumbotron text-center border border-dark" id="startGameWindow">
         <h2 class="cat-Header indieFlower">HOW TO PLAY</h2>
-        <p class="font-italic">Select one of the four bunnies to play as. Then, choose one of the remaining bunnies to battle against.</p>
-        <p class="font-italic">Press the "attack" button to attack the current enemy.  Your attack power will increase after each successful attack. If the enemy survives the attack, it will counter attack, causing you damage.</p>    
-        <p class="font-italic">If you succesfully kill the current enemy, you must then fight the remaining enemies.  Your health does not regenerate.</p>
-        <p class="font-italic">If at any point, the enemies counter attack causes you to lose all your health, you lose the game.  The game will then restart.</p>
-        <p class="font-italic">To win, you must successfully defeat all the enemies without losing all of your health.</p>
+        <h3 class="indieFlower"><u>CHARACTERS:</u></h3>
+        <h4 class="indieFlower"><span class="font-weight-bold">Regular Size Bunny:</span> Health 160HP, Attack Power 6, CounterAttack 12</h4>
+        <h4 class="indieFlower"><span class="font-weight-bold"></span>Big Bad Bunny:</span> Health 140HP, Attack Power 11, CounterAttack 25</h4>
+        <h4 class="indieFlower"><span class="font-weight-bold">The Easter Bunny:</span> Health 160HP, Attack Power 13, CounterAttack 15</h4>
+        <h4 class="indieFlower"><span class="font-weight-bold">The Evil Bunny:</span> Health 200HP, Attack Power 20, CounterAttack 20</h4>
+        <br>
+        <h3 class="indieFlower"><u>GAMEPLAY:</u></h3>
+        <h4 class="font-italic indieFlower">Select one of the four bunnies to play as. Then, choose one of the remaining bunnies to battle against.</p>
+        <h4 class="font-italic indieFlower">Press the "attack" button to attack the current enemy.  Your attack power will increase after each successful attack. If the enemy survives the attack, it will counter attack, causing you damage.</h4>    
+        <h4 class="font-italic indieFlower">If you succesfully kill the current enemy, you must then fight the remaining enemies.  Your health does not regenerate.</h4>
+        <h4 class="font-italic indieFlower">If at any point, the enemies counter attack causes you to lose all your health, you lose the game.  The game will then restart.</h4>
+        <br>
+        <h3 class="indieFlower"><u>HOW TO WIN:</u></h3>
+        <h4 class="font-italic indieFlower">Succesfully defeat all of the enemies without losing all of your health.</h4>
         <br>
         <button class="btn btn-success p-3 wide-button" id="startGame"><h1>Start The Game</h1></button>
-        
-
     </div>
+
     <div class="jumbotron text-center border border-dark" id="charSelectWindow">
         <h2 class="cat-Header indieFlower">SELECT YOUR BUNNY</h2>
-            <span class="btn border border-primary p-0" id="userBunny"></span> &nbsp &nbsp
-            <span class="btn border border-primary p-0" id="userBigBunny"></span> &nbsp &nbsp  
-            <span class="btn border border-primary p-0" id="userEasterBunny"></span> &nbsp &nbsp
-            <span class="btn border border-primary p-0" id="userDeathBunny"></span>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card border border-secondary">
+                    <p class="indieFlower mb-0">Regular Bunny</p>
+                    <span class="btn  p-0" id="userBunny"></span>
+                    <p class="indieFlower mb-0">Attack: 6</p>
+                    <p class="indieFlower mb-0">Counter: 12</p>
+                    <p class="indieFlower">Health: 160</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border border-secondary">
+                    <p class="indieFlower mb-0">Big Bad Bunny</p>
+                    <span class="btn  p-0" id="userBigBunny"></span>
+                    <p class="indieFlower mb-0">Attack: 11</p>
+                    <p class="indieFlower mb-0">Counter: 25</p>
+                    <p class="indieFlower">Health: 140</p> 
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border border-secondary">
+                    <p class="indieFlower mb-0">Easter Bunny</p>
+                    <span class="btn  p-0" id="userEasterBunny"></span>
+                    <p class="indieFlower mb-0">Attack: 13</p>
+                    <p class="indieFlower mb-0">Counter: 15</p>
+                    <p class="indieFlower">Health: 160</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border border-secondary">
+                    <p class="indieFlower mb-0">Death Bunny</p>
+                    <span class="btn p-0" id="userDeathBunny"></span>
+                    <p class="indieFlower mb-0">Attack: 20</p>
+                    <p class="indieFlower mb-0">Counter: 20</p>
+                    <p class="indieFlower">Health: 200</p>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!--Enemy Selection Window-->
     <div class="jumbotron text-center border border-dark" id="enemySelectWindow">
         <h2 class="cat-Header indieFlower">SELECT AN ENEMY</h2>
-        <span id="enemy1"></span> &nbsp &nbsp
-        <span id="enemy2"></span> &nbsp &nbsp
-        <span id="enemy3"></span>
+        <div class="row">
+            <div class="col-md-4" id="enemy1"></div>
+            <div class="col-md-4" id="enemy2"></div>
+            <div class="col-md-4" id="enemy3"></div>
+        </div>       
     </div>
 
+    <!--Battle Window-->
     <div class="jumbotron text-center border border-dark" id="battleWindow">
         <h2 class="cat-Header indieFlower">BUNNY BATTLE!</h2>
-        <button class="btn p-3" id="userFightIcon"></button> <span class="cat-Header indieFlower">&nbsp VS. &nbsp</span>
-        <button class="btn p-3" id="enemyFightIcon"></button>
+        
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">
+                <div class="card border border-dark">
+                    <p class="indieFlower mb-0">You:</p>
+                    <span class="btn  p-0" id="userFightIcon"></span>
+                    <p class="indieFlower health"></p>
+                    <p class="indieFlower"><span class="attack"></span></p>
+                    
+                </div>
+            </div>
+            <div class="col-md-2">
+                <br>
+                <br>
+                <h1 class="indieFlower text-danger display-2">VS.</h1>
+            </div>
+            <div class="col-md-3">
+                <div class="card border border-dark">
+                    <p class="indieFlower mb-0">Enemy:</p>
+                    <span class="btn p-0" id="enemyFightIcon"></span>
+                    <p class="indieFlower enemyHealth"></p>
+                    <p class="indieFlower">CounterAttack: <span class="counterAttack"></span></p>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
 
         <br>
         <br>
@@ -81,19 +156,20 @@
         <p id="counterAttackText"></p>
         <button class="btn btn-danger p-3 wide-button" id="attack"><h1>ATTACK</h1></button>
     </div>
-    
+
+    <!--Win Game Window-->
     <div class="jumbotron text-center border border-dark" id="winWindow">
         <h1 class="cat-Header indieFlower text-success">CONGRATULATIONS</h1>
         <h1 class="cat-Header indieFlower text-success">YOU WON!</h1>
         <button class="btn btn-success p-3 wide-button reset"><h1>Play Again</h1></button>
     </div>
+
+    <!--Lose Game Window-->
     <div class="jumbotron text-center border border-dark" id="lossWindow">
         <h1 class="cat-Header indieFlower text-danger">SORRY</h1>
         <h1 class="cat-Header indieFlower text-danger">YOU LOST!</h1>
         <button class="btn btn-danger p-3 wide-button reset"><h1>Play Again</h1></button>
     </div>
-    
-
 </div>
     
 
