@@ -1,4 +1,5 @@
 # Bunny-Wars-RPG
+### Play Now at https://sunshinedaydeam.github.io/Bunny-Wars-RPG/
 RPG Homework assignment
 
 CHARACTERS:
@@ -37,3 +38,5 @@ Succesfully defeat all of the enemies without losing all of your health.
 
 ***Game was designed and programmed by Alex Bruner***
 ***Please Contact Me with any Questions, Comments, or Concerns.***
+
+Email: ***alexbruner@live.com***
